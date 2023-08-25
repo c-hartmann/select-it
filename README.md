@@ -5,7 +5,7 @@ toggle Dolphins Selection Mode as with the 'Shift' key via D-Bus from within
 the context menu for folders.
 
 This is for lazy people as me, who want to save the long move with their
-pointing device to the "View" menu and "Select Files and Folders" from
+pointing device to the "Edit" menu and "Select Files and Folders" from
 within there or do not know about 'Shift' keyboard shortcut.
 
 After Installation this new action should be available in top level of the
