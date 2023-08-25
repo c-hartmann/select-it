@@ -17,5 +17,6 @@ located under "Actions").
 This is a clean room implementation based on D-Bus, therefore it lacks any
 dependencies beside qdbus(1), that should come basicly always with KDE.
 
-toggle-selection-mode-shift-screen.png
+Toggle Selection Mode via Context Menu:
+
 ![select it in action screenshot](assets/images/toggle-selection-mode-shift-dbus-screen.png)
