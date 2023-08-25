@@ -1,0 +1,1 @@
+migrate from qdbus to dbus-send
