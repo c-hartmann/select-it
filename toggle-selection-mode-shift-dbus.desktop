@@ -1,0 +1,84 @@
+#
+#	toggle-selection-mode-shift-dbus.desktop Version 0.0.1
+#	Copyright (C) 2022 Christian Hartmann <hartmann.christian@gmail.com>
+#
+#	SPDX-FileCopyrightText: 2022 Christian Hartmann <hartmann.christian@gmail.com>
+#
+#	SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
+#
+#	This program is free software; you can redistribute it and/or
+#	modify it under the terms of the GNU General Public License as
+#	published by the Free Software Foundation; either version 3 of
+#	the license or (at your option) at any later version that is
+#	accepted by the membership of KDE e.V. (or its successor
+#	approved by the membership of KDE e.V.), which shall act as a
+#	proxy as defined in Section 14 of version 3 of the license.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#	GNU General Public License for more details.
+#
+# TODO: match remote directories. text/x-uri is not sufficient
+#       X-KDE-Protocol?
+#       https://develop.kde.org/docs/apps/dolphin/service-menus/#advanced-properties
+
+[Desktop Entry]
+Name=Selection Mode (Shift)
+Type=Service
+MimeType=inode/directory;inode/mount-point;inode/*;
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+X-KDE-Priority=TopLevel
+Icon=quickwizard
+InitialPreference=60
+Actions=ToggleSelectionMode;
+TryExec=qdbus
+
+[Desktop Action ToggleSelectionMode]
+Icon=quickwizard
+Name=Select Files and Folders	Shift
+Name[ar]=Shif	tحدد الملفات والمجلدات
+Name[az]=Faylları və qovluqları seç	Shift
+Name[be]=Абраць файлы і каталогі	Shift
+Name[be@latin]=Abrać fajly i katalohi	Shift
+Name[bg]=Избиране на файлове и папки	Shift
+Name[ca]=Selecció de fitxers i carpetes	Shift
+Name[ca@valencia]=Seleccioneu els fitxers i carpetes	Shift
+Name[cs]=Vybrat soubory a složky	Shift
+Name[de]=Dateien und Ordnern auswählen	Shift
+Name[el]=Επιλογή αρχείων και φακέλων	Shift
+Name[eo]=Elekti Dosierojn kaj Dosierujojn	Shift
+Name[es]=Seleccionar archivos y carpetas	Shift
+Name[et]=Failide ja kataloogide valimine	Shift
+Name[eu]=Hautatu fitxategiak eta karpetak	Shift
+Name[fi]=Valitse tiedostot ja kansiot	Shift
+Name[fr]=Sélectionner des fichiers et des dossiers	Shift
+Name[gl]=Seleccionar ficheiros e cartafoles	Shift
+Name[hi]=फ़इल व फोल्डरों को चुने	Shift
+Name[ia]=Selige files e dossieres	Shift
+Name[id]=Pilih File dan Folder	Shift
+Name[ie]=Selecter files e fólderes	Shift
+Name[is]=Veldu skrár og möppur	Shift
+Name[it]=Seleziona file e cartelle	Shift
+Name[ja]=ファイルとフォルダを選択	Shift
+Name[ka]=აირჩიეთ ფაილები და საქაღალდეები	Shift
+Name[ko]=파일 및 폴더 선택	Shift
+Name[lt]=Žymėti failus ir aplankus	Shift
+Name[my]=ဖိုင်လ်နှင့်ဖိုလ်ဒါရွေးမည်	Shift
+Name[nb]=Velg filer og mapper	Shift
+Name[nl]=Bestanden en mappen selecteren	Shift
+Name[nn]=Merk filer og mapper	Shift
+Name[pl]=Zaznacz pliki i katalogi	Shift
+Name[pt]=Seleccionar os Ficheiros e Pastas	Shift
+Name[pt_BR]=Pesquisa por arquivos e pastas	Shift
+Name[ro]=Alege fișiere și dosare	Shift
+Name[ru]=Выбор файлов и папок	Shift
+Name[sl]=Izberi datoteke in mape	Shift
+Name[sv]=Markera filer och kataloger	Shift
+Name[ta]=அடைவுகளையும் கோப்புகளையும் தேர்ந்தெடு	Shift
+Name[tr]=Dosyalar ve Klasörler Seç	Shift
+Name[uk]=Вибір файлів і тек	Shift
+Name[vi]=Chọn tệp và thư mục	Shift
+Name[zh_CN]=选择文件和文件夹	Shift
+Name[zh_TW]=選取檔案及資料夾	Shift
+Exec=bash -c 'for sname in $( qdbus "org.kde.dolphin-*" ) ; do isactive=false ; isactive=$( qdbus "$sname" "/dolphin/Dolphin_1" "org.qtproject.Qt.QWidget.isActiveWindow" ) ; $isactive && qdbus "$sname" "/dolphin/Dolphin_1/actions/toggle_selection_mode" "org.qtproject.Qt.QAction.trigger" ; done'
