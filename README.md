@@ -1,5 +1,7 @@
 # Toogle Dolphin Selection Mode
 
+![select it logo](assets/images/toggle-selection-mode-shift-dbus-logo.png)
+
 A KDE 5 dolphin context menu extension (aka Service Menu), that let's you
 toggle Dolphins Selection Mode as with the 'Shift' key via D-Bus from within
 the context menu for folders.
@@ -14,3 +16,6 @@ located under "Actions").
 
 This is a clean room implementation based on D-Bus, therefore it lacks any
 dependencies beside qdbus(1), that should come basicly always with KDE.
+
+toggle-selection-mode-shift-screen.png
+![select it in action screenshot](assets/images/toggle-selection-mode-shift-dbus-screen.png)
